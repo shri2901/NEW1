@@ -1,0 +1,10 @@
+INPUT: flash.inm
+MODNAME: apmain
+RUNID: flash
+NEW_RUNID: flash
+OLD_RUNID: flash
+PDF: flash.appdf
+USERNAME: Admin
+XMOD: C:\Program Files\AspenTech\Aspen Plus V14.0\Engine\xeq\apmain
+SPONLY:
+DBCONN: _0458dlv.ads

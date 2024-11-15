@@ -1,0 +1,10 @@
+INPUT: mch - new.inm
+MODNAME: apmain
+RUNID: mch - new
+NEW_RUNID: mch - new
+OLD_RUNID: mch - new
+PDF: mch - new.appdf
+USERNAME: Admin
+XMOD: C:\Program Files\AspenTech\Aspen Plus V14.0\Engine\xeq\apmain
+SPONLY:
+DBCONN: _1823gtf.ads

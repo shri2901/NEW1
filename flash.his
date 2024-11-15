@@ -1,0 +1,264 @@
+
+ + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + +
+ + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + +
+ + +                                                                         + +
+ + +                      ASPEN PLUS CALCULATION HISTORY                     + +
+ + +                                                                         + +
+ + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + +
+ + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + +
+
+ ASPEN PLUS IS A TRADEMARK OF           HOTLINE:
+ ASPEN TECHNOLOGY, INC.                 U.S.A. 888/996-7100
+ 781/221-6400                           EUROPE (44) 1189-226555
+
+ PLATFORM: WIN-X64                                       OCTOBER 8, 2024     
+ VERSION: 40.0   Build 359                               TUESDAY     
+ INSTALLATION:                                           12:24:16 P.M.       
+
+ THIS COPY OF ASPEN PLUS LICENSED TO MS RAMAIAH INST OF              
+
+
+      ASPEN PLUS (R) IS A PROPRIETARY PRODUCT OF ASPEN TECHNOLOGY, INC.
+      (ASPENTECH), AND MAY BE USED ONLY UNDER AGREEMENT WITH ASPENTECH.
+      RESTRICTED RIGHTS LEGEND:  USE, REPRODUCTION, OR DISCLOSURE BY THE
+      U.S. GOVERNMENT IS SUBJECT TO RESTRICTIONS SET FORTH IN 
+      (i) FAR 52.227-14, Alt. III, (ii) FAR 52.227-19, (iii) DFARS 
+      252.227-7013(c)(1)(ii), or (iv) THE ACCOMPANYING LICENSE AGREEMENT,
+      AS APPLICABLE. FOR PURPOSES OF THE FAR, THIS SOFTWARE SHALL BE DEEMED
+      TO BE "UNPUBLISHED" AND LICENSED WITH DISCLOSURE PROHIBITIONS.
+      CONTRACTOR/SUBCONTRACTOR: ASPEN TECHNOLOGY, INC. 20 CROSBY DRIVE,
+      BEDFORD, MA 01730.
+ *** INPUT SUMMARY ***
+
+ >>CURRENT RUN
+
+   ORIGINAL RUN                           OCTOBER 8, 2024     
+   12:24:16 P.M.                          TUESDAY     
+   INPUT FILE: _0458dlv.inm
+   RUN ID : _0458dlv
+          1    ;
+          2    ;Input file created by Aspen Plus Rel. 40.0 at 12:24:11 Tue Oct 8, 2024
+          3    ;Directory D:\Jayasritha  Runid FLASH
+          4    ;
+          5
+          6
+          7    DYNAMICS
+          8        DYNAMICS RESULTS=ON
+          9
+         10    TITLE 'flash'
+         11
+         12    IN-UNITS ENG SHORT-LENGTH=in
+         13
+         14    DEF-STREAMS CONVEN ALL
+         15
+         16    ACCOUNT-INFO ACCOUNT=001 PROJECT-ID=EXP1 PROJECT-NAME="FLASH"  &
+         17            USER-NAME="1MS21CH019"
+         18
+         19    DESCRIPTION "
+         20        This example is used in chapter 1 of 'Aspen Plus Getting Started -
+         21        Building and Running A Process Model'.
+         22        "
+         23
+         24    DATABANKS 'APV140 PURE40' / 'APV140 AQUEOUS' / 'APV140 SOLIDS' &
+         25             / 'APV140 INORGANIC' / NOASPENPCD
+         26
+         27    PROP-SOURCES 'APV140 PURE40' / 'APV140 AQUEOUS' /  &
+         28            'APV140 SOLIDS' / 'APV140 INORGANIC'
+         29
+         30    COMPONENTS
+         31        METHANOL CH4O /
+         32        WATER H2O
+         33
+         34    SOLVE
+         35        RUN-MODE MODE=SIM
+         36
+         37    FLOWSHEET
+         38        BLOCK B1 IN=1 OUT=2 3
+         39
+         40    PROPERTIES NRTL
+         41
+         42    PROP-DATA NRTL-1
+         43        IN-UNITS ENG SHORT-LENGTH=in
+         44        PROP-LIST NRTL
+         45        BPVAL METHANOL WATER 0.0 -229.9627800 .2994000000 0.0 0.0  &
+         46            0.0 140.0000000 203.0000000
+         47        BPVAL WATER METHANOL 0.0 765.5814000 .2994000000 0.0 0.0  &
+         48            0.0 140.0000000 203.0000000
+         49
+         50    STREAM 1
+         51        SUBSTREAM MIXED TEMP=180. PRES=20. <psi>
+         52        MOLE-FLOW METHANOL 50. / WATER 50.
+         53
+         54    BLOCK B1 FLASH2
+         55        PARAM PRES=1. <atm> DUTY=0.
+         56
+         57    EO-CONV-OPTI
+         58
+         59    STREAM-REPOR MOLEFLOW
+         60
+         61    PROPERTY-REP PCES
+         62    ;
+         63    ;
+         64    ;
+         65    ;
+         66    ;
+ *** INPUT TRANSLATOR MESSAGES ***
+
+  *** THIS RUN USES THE PROPERTIES ENTERPRISE DATABASE ***
+      SQLLOCALDB.APESV140 : (DATAVERSION - 40.0.0.13)                         
+      SQLLOCALDB.APV140 : (DATAVERSION - 40.0.0.13)                           
+      SQLLOCALDB.FACTV140 : (DATAVERSION - 40.0.0.12)                         
+      SQLLOCALDB.NISTV140 : (DATAVERSION - 40.0.0.12)                         
+ 
+ 
+
+ PDF updated                                                                      TIME =      7.93
+
+ *** CALCULATION TRACE ***
+
+ FLASH                                                           
+
+ *** FLOWSHEET ANALYSIS MESSAGES ***
+
+ FLOWSHEET CONNECTIVITY BY STREAMS       
+
+   STREAM     SOURCE     DEST           STREAM     SOURCE     DEST
+   1          ----       B1             2          B1         ----    
+   3          B1         ----                                         
+
+ FLOWSHEET CONNECTIVITY BY BLOCKS        
+
+   BLOCK        INLETS                         OUTLETS
+   B1           1                              2 3                         
+
+      COMPUTATION ORDER FOR THE FLOWSHEET IS:
+      B1 
+
+Calculations begin                                                              time      0.43
+
+
+ SIMULATION CALCULATIONS BEGIN                                                    TIME =      0.43
+
+      ENTHALPY CALCULATION FOR INLET STREAM 1 OF BLOCK B1                         TIME =      0.44
+      KODE = 2  NTRIAL =   5  T = 355.3722  P =  137895.      V = 8.640501E-02  Q =  0.00000    
+
+      UOS BLOCK B1       MODEL: FLASH2                                            TIME =      0.46
+      KODE = 1  NTRIAL =   5  T = 347.1979  P =  101325.      V = 0.107737      Q =  0.00000    
+
+ Report Writer entered                                                            Time =      0.73
+
+ Results generated                                                                Time =      0.86
+
+
+*** INPUT SPECIFICATION MESSAGES ***
+
+ CHANGES WERE MADE TO STREAM       1        10/08/2024   12:29:06:99 
+ STREAM 1
+     SUBSTREAM MIXED TEMP=90. <C> PRES=20. <psi>
+     MOLE-FLOW METHANOL 50. / WATER 50.
+
+ PDF updated                                                                      TIME =    285.29
+ THIS COPY OF ASPEN PLUS LICENSED TO MS RAMAIAH INST OF              
+ 
+ 
+
+
+Calculations begin                                                              time    285.34
+
+
+      ENTHALPY CALCULATION FOR INLET STREAM 1 OF BLOCK B1                         TIME =    285.34
+      KODE = 2  NTRIAL =   4  T = 363.1500  P =  137895.      V = 0.773243      Q =  0.00000    
+
+      UOS BLOCK B1       MODEL: FLASH2                                            TIME =    285.34
+      KODE = 1  NTRIAL =   4  T = 355.0551  P =  101325.      V = 0.784620      Q =  0.00000    
+
+ Report Writer entered                                                            Time =    285.35
+
+ Results generated                                                                Time =    285.37
+
+
+*** INPUT SPECIFICATION MESSAGES ***
+
+ CHANGES WERE MADE TO STREAM       1        10/08/2024   12:36:13:99 
+ STREAM 1
+     SUBSTREAM MIXED TEMP=180. PRES=20. <psi>
+     MOLE-FLOW METHANOL 50. / WATER 50.
+
+ BLOCK        B1       IS GENERATED BECAUSE OF OTHER CHANGES 10/08/2024   12:36:13:99 
+ BLOCK B1 FLASH2
+     PARAM PRES=1. <ATM> DUTY=0.
+
+ PDF updated                                                                      TIME =    712.44
+ THIS COPY OF ASPEN PLUS LICENSED TO MS RAMAIAH INST OF              
+ 
+ 
+
+
+Calculations begin                                                              time    712.47
+
+
+      ENTHALPY CALCULATION FOR INLET STREAM 1 OF BLOCK B1                         TIME =    712.47
+      KODE = 2  NTRIAL =   5  T = 355.3722  P =  137895.      V = 8.640501E-02  Q =  0.00000    
+
+      UOS BLOCK B1       MODEL: FLASH2                                            TIME =    712.47
+      KODE = 1  NTRIAL =   5  T = 347.1979  P =  101325.      V = 0.107737      Q =  0.00000    
+
+ Report Writer entered                                                            Time =    712.47
+
+ Results generated                                                                Time =    712.49
+
+
+*** INPUT SPECIFICATION MESSAGES ***
+
+ CHANGES WERE MADE TO BLOCK        B1       10/08/2024   12:38:12:99 
+ BLOCK B1 FLASH2
+     PARAM TEMP=83. <C> DUTY=0.
+
+ PDF updated                                                                      TIME =    831.26
+ THIS COPY OF ASPEN PLUS LICENSED TO MS RAMAIAH INST OF              
+ 
+ 
+
+
+Calculations begin                                                              time    831.27
+
+
+      UOS BLOCK B1       MODEL: FLASH2                                            TIME =    831.27
+      KODE = 4  NTRIAL =   4  T = 356.1500  P =  141880.      V = 8.431426E-02  Q =  0.00000    
+
+ Report Writer entered                                                            Time =    831.28
+
+ Results generated                                                                Time =    831.29
+
+
+*** INPUT SPECIFICATION MESSAGES ***
+
+ CHANGES WERE MADE TO STREAM       1        10/08/2024   12:39:44:99 
+ STREAM 1
+     SUBSTREAM MIXED TEMP=180. PRES=20. <psi>
+     MOLE-FLOW METHANOL 60. / WATER 40.
+
+ PDF updated                                                                      TIME =    922.93
+ THIS COPY OF ASPEN PLUS LICENSED TO MS RAMAIAH INST OF              
+ 
+ 
+
+
+Calculations begin                                                              time    922.94
+
+
+      ENTHALPY CALCULATION FOR INLET STREAM 1 OF BLOCK B1                         TIME =    922.94
+      KODE = 2  NTRIAL =   4  T = 355.3722  P =  137895.      V = 0.431249      Q =  0.00000    
+
+      UOS BLOCK B1       MODEL: FLASH2                                            TIME =    922.94
+      KODE = 4  NTRIAL =   2  T = 356.1500  P =  141912.      V = 0.429568      Q =  0.00000    
+
+ Report Writer entered                                                            Time =    922.95
+
+ Results generated                                                                Time =    922.96
+
+RUN SAVED
+
+
+
+ NO ERRORS OR WARNINGS GENERATED
